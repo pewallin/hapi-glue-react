@@ -1,6 +1,6 @@
 'use strict';
-const Layout = require('./layout.jsx');
 const React = require('react');
+const Layout = require('./layout');
 
 module.exports = React.createClass({
   render: function render() {

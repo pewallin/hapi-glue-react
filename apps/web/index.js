@@ -1,6 +1,6 @@
 'use strict';
 
-const filmInfo = require('./data/film-info');
+const filmDetailsController = require('./controllers/film-details-controller');
 
 exports.register = (server, options, next) => {
   server.route({
@@ -14,19 +14,12 @@ exports.register = (server, options, next) => {
   server.route({
     method: 'GET',
     path: '/web-se/film/{name}',
-    handler: (request, reply) => {
-      filmInfo.getFilm(request.params.name)
-      .then((response) => {
-        const movieContext = {
-          title: 'Viaplay - ' + response.product._links.self.title,
-          film: response
-        };
-        return reply.view('film-details', movieContext);
-      })
-      .catch((error) => {
-        console.log(error);
-        return reply.view('404').code(404);
-      });
+    handler: filmDetailsController,
+    config: {
+      cache: {
+        expiresIn: 60 * 1000, // 60 seconds
+        privacy: 'private' // browser cache
+      }
     }
   });
 

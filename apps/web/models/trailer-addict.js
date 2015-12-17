@@ -3,7 +3,7 @@ const request = require('request-promise');
 const xml2json = require('xml2js-promise');
 const baseURL = 'http://api.traileraddict.com/';
 
-function pruneTrailerJSON(json) {
+function pruneTrailerJSON (json) {
   if (json.trailers && json.trailers.trailer) {
     return json.trailers.trailer[0];
   } else {
@@ -11,13 +11,13 @@ function pruneTrailerJSON(json) {
   }
 }
 
-function getTrailerByImdbId(imdbId) {
+function getTrailerByImdbId (imdbId) {
   return request({
-      uri: baseURL + '/?imdb=' + imdbId,
-      json: true,
-    })
-    .then(xml2json)
-    .then(pruneTrailerJSON);
+    uri: baseURL + '/?imdb=' + imdbId,
+    json: true,
+  })
+  .then(xml2json)
+  .then(pruneTrailerJSON);
 }
 
 module.exports.getTrailerByImdbId = getTrailerByImdbId;

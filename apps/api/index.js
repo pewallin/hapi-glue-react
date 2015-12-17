@@ -1,12 +1,11 @@
 'use strict';
 
 exports.register = function (server, options, next) {
-
   server.route({
     method: 'GET',
     path: '/',
     handler: function (request, reply) {
-      reply({ message: 'Viaplay API' });
+      reply({ message: 'Todo - serve Viaplay + trailers API from here' });
     }
   });
 

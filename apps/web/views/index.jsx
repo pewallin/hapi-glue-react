@@ -7,7 +7,7 @@ var Component = React.createClass({
       <Layout title='Start'>
         <div className='content-transition'>
           <div id='content'>
-            <section className='error notfound'>
+            <section className='error'>
               <div className='scaffold'>
                 <h1>Några exempel</h1>
                 <div>

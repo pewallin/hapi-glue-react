@@ -29,14 +29,14 @@ const manifest = {
       engines: { jsx: 'hapi-react-views' },
       compileOptions: {}, // optional
       relativeTo: __dirname,
-      path: '../server/web/views'
+      path: '../apps/web/views'
     },
     inert: {},
     blipp: {},
     tv: {},
 
-    '../server/api/index': [{ routes: { prefix: '/api' } }],
-    '../server/web/index': {}
+    '../apps/api/index': [{ routes: { prefix: '/api' } }],
+    '../apps/web/index': {}
   }
 };
 
