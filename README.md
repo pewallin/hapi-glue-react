@@ -1,4 +1,4 @@
-# viaplay
+# hapi-glue-react starter
 
 ## Usage
 
@@ -20,6 +20,7 @@ If I had more time I would have done more from scratch but given project deadlin
 ## TODOs / things obviously missing
 - Tests - obviously hugely important in a complex project but left out due to time constriants
 - Development server and structure for the client side app.
+- Callbacks => Promises => Async / await (or co + generators if ES2015 is the limit)
 - Async fetching of trailer on the client - Unnecessary to wait for 2 API calls before serving anything to the client.
 - React routing - To get the full benefits of the isomorphic features
 - Better client side state management - I personally like Redux
